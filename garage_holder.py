@@ -29,11 +29,11 @@ def list_menu():
     option = int(input("What would you like to do? (1-4): "))
 
     if option == 1:
-        view()
+        view_car_list()
     elif option == 2:
-        add()
+        add_car_list()
     elif option == 3:
-        delete()
+        delete_car_list()
     elif option == 4:
         quit()
     else:
@@ -66,10 +66,10 @@ def garage_menu():
 #     print()
 
     
-def create():
+def create_garage():
     print("You are creating")
 
-def view():
+def view_car_list():
     # print("You are viewing")
 
     try:
@@ -84,11 +84,11 @@ def view():
         print(car)
     print()
 
-def update():
+def update_garage():
     print("You are updating")
 
 
-def delete():
+def delete_car_list():
     """Remove a car name from car_holder.json with confirmation."""
     # Load existing data from car_holder.json
     try:
@@ -136,7 +136,7 @@ def delete():
         print(car)
     print()
 
-def add():
+def add_car_list():
     # print("You are adding a car to your list")
 
     try:
