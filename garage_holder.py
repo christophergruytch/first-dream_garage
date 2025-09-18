@@ -54,16 +54,16 @@ def garage_menu():
 
 
 
-def hello(username):
-    print()
-    print(f"Hello {username}, what would you like to do today?")
-    print("1. Create A New Garage")
-    print("2. View A Garage Or Your Car List")
-    print("3. Update An Existing Garage")
-    print("4. Delete A Garage Or A Car From Your List")
-    print("5. Add A Car To Your List")
-    print("6. Quit / Exit the Program")
-    print()
+# def hello(username):
+#     print()
+#     print(f"Hello {username}, what would you like to do today?")
+#     print("1. Create A New Garage")
+#     print("2. View A Garage Or Your Car List")
+#     print("3. Update An Existing Garage")
+#     print("4. Delete A Garage Or A Car From Your List")
+#     print("5. Add A Car To Your List")
+#     print("6. Quit / Exit the Program")
+#     print()
 
     
 def create():
