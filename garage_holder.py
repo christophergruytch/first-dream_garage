@@ -33,7 +33,7 @@ def list_menu():
     elif option == 2:
         add_car_list()
     elif option == 3:
-        delete_car_list()
+        remove_car_list()
     elif option == 4:
         quit()
     else:
@@ -53,21 +53,7 @@ def garage_menu():
     time.sleep(3)
 
 
-
-# def hello(username):
-#     print()
-#     print(f"Hello {username}, what would you like to do today?")
-#     print("1. Create A New Garage")
-#     print("2. View A Garage Or Your Car List")
-#     print("3. Update An Existing Garage")
-#     print("4. Delete A Garage Or A Car From Your List")
-#     print("5. Add A Car To Your List")
-#     print("6. Quit / Exit the Program")
-#     print()
-
-    
-def create_garage():
-    print("You are creating")
+# **************** Beginning Of The Car List Functions ****************
 
 def view_car_list():
     # print("You are viewing")
@@ -77,18 +63,38 @@ def view_car_list():
             data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         data = {"cars": []}
-    
+
     print()
     print("The cars in your car holder include: ")
     for car in data["cars"]:
         print(car)
     print()
 
-def update_garage():
-    print("You are updating")
+
+def add_car_list():
+    # print("You are adding a car to your list")
+
+    try:
+        with open("car_holder.json", "r") as f:
+            data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {"cars": []}
+
+    car_name = input("Please enter the car you would like to add: ").strip()
+
+    data["cars"].append(car_name)
+
+    try:
+        with open("car_holder.json", "w") as f:
+            json.dump(data, f, indent=2)
+        print(f"Added '{car_name}' to car_holder.json!")
+    except Exception as e:
+        print(f"Error saving to car_holder.json: {e}")
+
+    
 
 
-def delete_car_list():
+def remove_car_list():
     """Remove a car name from car_holder.json with confirmation."""
     # Load existing data from car_holder.json
     try:
@@ -136,30 +142,30 @@ def delete_car_list():
         print(car)
     print()
 
-def add_car_list():
-    # print("You are adding a car to your list")
 
-    try:
-        with open("car_holder.json", "r") as f:
-            data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        data = {"cars": []}
+# **************** End Of The Car List Functions ****************
 
-    car_name = input("Please enter the car you would like to add: ").strip()
 
-    data["cars"].append(car_name)
 
-    try:
-        with open("car_holder.json", "w") as f:
-            json.dump(data, f, indent=2)
-        print(f"Added '{car_name}' to car_holder.json!")
-    except Exception as e:
-        print(f"Error saving to car_holder.json: {e}")
 
-    
 
-def quit():
-    print("You are quiting")
+# **************** Beginning Of The Car Garage Functions ****************
+
+def view_garage():
+    pass
+
+def create_garage():
+    pass
+
+def delete_garage():
+    pass
+
+def edit_garage():
+    pass
+
+
+# **************** End Of The Car Garage Functions ****************
+
 
 
 if __name__ == '__main__':
